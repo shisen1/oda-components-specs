@@ -56,6 +56,17 @@ spec:
               name:
                 type: string
                 description: Name of the API
+              id: #added by Gaetano
+                type: string 
+                description: Open API ID in the format TMFXXX #added by Gaetano
+              isRequired: #added by Gaetano 
+                type: string #added by Gaetano 
+                enum: [yes, not] #added by Gaetano 
+                description: It instructs about  mandatory API (yes) and optional API #added by Gaetano
+              version: #added by Gaetano 
+                type: string #added by Gaetano 
+                required: true #added by Gaetano 
+                description: Open API version #added by Gaetano 
               specification:
                 type: string
                 format: url
@@ -75,9 +86,18 @@ spec:
                 description: (optional) The path to the developer User Interface for the API
               port:
                 type: integer
-                description: The port where the API is exposed 
+                description: The port where the API is exposed
+              resources:  #added by Gaetano 
+                type: array  #added by Gaetano 
+                items:  #added by Gaetano 
+                  resources:   #added by Gaetano 
+                  type: object  #added by Gaetano 
+                  description: Open APIs resources specified for the Component  #added by Gaetano 
+                  properties:  #added by Gaetano 
+                    method  #added by Gaetano 
             required:
             - name
+            - isRequired
             - apitype
             - implementation
             - path
@@ -91,6 +111,18 @@ spec:
                 type: string
                 required: true
                 description: Name of the API that this component is dependent on
+              id: 
+                type: string
+                required: true
+                description: Open API id in the format TMFXXX
+              isRequired:
+                type: string #added by Gaetano
+                required: true 
+                description: It instructs about  mandatory API (yes) and optional API #added by Gaetano
+              version:
+                type: string
+                requires: true
+                description: Open API version
               specification:
                 type: string
                 format: url
@@ -100,6 +132,14 @@ spec:
                 required: true
                 enum: [openapi]
                 description: The type of API specification. Currently only OpenAPI (swagger) and open-metrics (metrics) APIs are supported.
+              resources:  #added by Gaetano 
+                type: array  #added by Gaetano 
+                items:  #added by Gaetano 
+                  resources:   #added by Gaetano 
+                  type: object  #added by Gaetano 
+                  description: Open APIs resources specified for the Component  #added by Gaetano 
+                  properties:  #added by Gaetano 
+                    method  #added by Gaetano 
         publishedEvents: 
           type: array
           items:
@@ -115,9 +155,24 @@ spec:
               hub:
                 type: string
                 description: The path for configuring the destination for the events
+              implementation: #added by Gaetano
+                type: string
+                description: ULR where implementation can be retrieved
+              apitype: #added by Gaetano
+                type: string
+                enum: [OpenAPI]
+                description: The type of API specification. Currently only OpenAPI (swagger) and open-metrics (metrics) APIs are supported.
               port:
                 type: integer
                 description: The port where the hub is exposed 
+              resources:  #added by Gaetano 
+                type: array  #added by Gaetano 
+                items:  #added by Gaetano 
+                  resources:   #added by Gaetano 
+                  type: object  #added by Gaetano 
+                  description: Open APIs resources specified for the Component  #added by Gaetano 
+                  properties:  #added by Gaetano 
+                    method  #added by Gaetano               
         subscribedEvents: 
           type: array
           items:
@@ -133,13 +188,25 @@ spec:
               call-back:
                 type: string
                 description: The path to call-back end-point for these events
-              filter:
-                type: string
-                description: The filter to use for this subscription
-                example: CatalogStateChangeEvent&status=active
+              #filter:
+               # type: string
+                #description: The filter to use for this subscription
+                #example: CatalogStateChangeEvent&status=active
               port:
                 type: integer
                 description: The port where the call-back is exposed 
+              apitype: #added by Gaetano
+                type: string
+                enum: [OpenAPI]
+                description: The type of API specification. Currently only OpenAPI (swagger) and open-metrics (metrics) APIs are supported.             
+              resources:  #added by Gaetano 
+                type: array  #added by Gaetano 
+                items:  #added by Gaetano 
+                  resources:   #added by Gaetano 
+                  type: object  #added by Gaetano 
+                  description: Open APIs resources specified for the Component  #added by Gaetano 
+                  properties:  #added by Gaetano 
+                    method  #added by Gaetano                    
     management:
       type: object  
       properties:  
