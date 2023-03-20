@@ -343,5 +343,6 @@ coreFunction:
         - resourceSpecificationChangeEvent
         - resourceSpecificationDeleteEvent         
 management: []
+reporting: []
 security: []
   
