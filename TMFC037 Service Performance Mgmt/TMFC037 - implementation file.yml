@@ -1,4 +1,4 @@
-    apiVersion: oda.tmforum.org/v1alpha1
+apiVersion: oda.tmforum.org/v1alpha1
 kind: component
 metadata:
   labels:
@@ -101,7 +101,6 @@ spec:
         - taskFlowDeleteEvent
         - taskFlowAttributeValueChangeEvent
         - taskFlowInformationRequiredEvent
-       
        AlarmManagement:
         - alarmStateChange**
         - alarmCreateEvent**
@@ -129,7 +128,6 @@ spec:
         - thresholdJobChangedNotification
         - thresholdJobSuspendNotification
         - thresholdJobResumeNotification
-            
     SubscribedEvent:
         ServiceCatalogManagement:
           - serviceSpecificationChangeEvent
@@ -149,8 +147,7 @@ spec:
           - processFlowStateChangeEvent
           - taskFlowCreateEvent
           - taskFlowStateChangeEvent
- 
- maintainers:
+  maintainers:
     - email: milind.2.bhagwat@bt.com
       name: Milind Bhagwat
   management: []
