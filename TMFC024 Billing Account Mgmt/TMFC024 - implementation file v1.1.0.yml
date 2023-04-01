@@ -2,100 +2,79 @@ apiVersion: oda.tmforum.org/v1alpha1
 kind: component
 metadata:
   labels:
-    oda.tmforum.org/componentName: Billing Account Management
+    oda.tmforum.org/componentName: TMFC024 - Billing Account Management
     oda.tmforum.org/funtionalBlockName: Party Management
-  name: TAG_REALESE_NAME - Billing Account Management
+    name: TAG_REALESE_NAME - Billing Account Management
 spec:
   componentKinds:
-    - group: core
-      kind: Inventory
+  - group: core
+    kind: Inventory
   coreFunction:
-    exposedAPIs:
-      AccountManagement:
-        version: 4
-        id: TMF666
-        partyAccount:
-          - GET
-          - GET /id
-          - POST
-          - PATCH
-          - DELETE
-      ProcessFlowManagement:
-        version: 4
-        id: TMF701
-        processFlow:
-          - POST
-          - GET
-          - GET /id
-          - DELETE
-        taskFlow:
-          - PATCH
-          - GET
-          - GET /id
-      Event:
-        version: 4
-        id: TMF688
-        listener:
-          - POST
-        hub:
-          - POST
-          - DELETE
+    exposedAPIs: 
+      - name: AccountManagement
+        specification: https://github.com/tmforum-apis/TMF666_AccountManagement/blob/main/TMF666-AccountManagement-v4.0.0.swagger.json
+        required: true
+        implementation: /{{.Release.Name}}-AccountManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/AccountManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/AccountManagement/v4/docs
+        port: 8080
+      - name: ProcessFlowManagement
+        specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-ProcessFlowManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/processFlowManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/processFlowManagement/v4/docs
+        port: 8080
+      - name: Event
+        specification: https://github.com/tmforum-apis/TMF688-Event/blob/master/TMF688-EventManagement-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-EventManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4/docs
+        port: 8080
     dependantAPIs:
-      PartyRoleManagement:
-        version: 4
-        id: TMF669
-        partyRole:
-          - GET
-          - GET /id
-      PartyManagement:
-        version: 4
-        id: TMF632
-        individual:
-          - GET
-          - GET /id
-        organization:
-          - GET
-          - GET /id
-      UserRolePermission:
-        version: 4
-        id: TMF672
-        permission:
-          - GET
-          - GET /id
-      PaymentMethodManagement:
-        version: 4
-        id: TMF670
-        paymentMethod:
-          - GET
-          - GET /id
-      Event:
-        version: 4
-        id: TMF688
-        event:
-          - POST
-          - GET /id
-          - GET
-      ProcessFlowManagement:
-        version: 4
-        id: TMF701
-        processFlow:
-          - POST
-          - GET
-          - GET /id
-          - DELETE
-        taskFlow:
-          - PATCH
-          - GET
-          - GET /id
-    managementAPIs: null
-    eventNotification:
+      - name: PartyRoleManagement
+        specification: https://github.com/tmforum-apis/TMF669_PartyRole/blob/master/TMF669-PartyRole-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-PartyRoleManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PartyRoleManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PartyRoleManagement/v4/docs
+        port: 8080
+      - name: UserRoles&Permissions
+        specification: https://github.com/tmforum-apis/TMF672-UserRoles&Permissions/blob/master/TMF672-UserRoles&Permissions-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-UserRoles&Permissions
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/UserRoles&Permissions/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/UserRoles&Permissions/v4/docs
+        port: 8080
+      - name: PaymentMethodManagement
+        specification: https://github.com/tmforum-apis/TMF670-PaymentMethodManagement/blob/master/TMF670-PaymentMethodManagement-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-PaymentMethodManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PaymentMethodManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PaymentMethodManagement/v4/docs
+        port: 8080
+      - name: ProcessFlowManagement
+        specification: https://github.com/tmforum-apis/TMF701-ProcessFlowManagement/blob/master/TMF701-ProcessFlowManagement-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-ProcessFlowManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4/docs
+        port: 8080      
+      - name: EventManagement
+        specification: https://github.com/tmforum-apis/TMF688-EventManagement/blob/master/TMF688-EventManagement-v4.0.0.swagger.json
+        implementation: /{{.Release.Name}}-EventManagement
+        path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4
+        developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4/docs
+        port: 8080
+    managementAPIs:
+  eventNotification:
     PublishedEvent:
         Account:
         - partyAccountAttributeValueChangeEvent
         - partyAccountStateChangeEvent
         - billingAccountAttributeValueChangeEvent
         - billingAccountStateChangeEvent
-
+        - settlementAccountAttributeValueChangeEvent
+        - settlementAccountStateChangeEvent
+        - financialAccountCreateEvent
+        - financialAccountAttributeValueChangeEvent
+        - financialAccountStateChangeEvent
+        - financialAccountDeleteEvent
     SubscribedEvent:
        PartyRole:
         - partyRoleCreateEvent
@@ -112,6 +91,7 @@ spec:
         - userRoleAttributeValueChangeEvent
         - userRoleStateChangeEvent
         - userRoleDeleteEvent
+
   maintainers:
     - email: matteo.destino@accenture.com
       name: Matteo Destino
@@ -120,13 +100,13 @@ spec:
     - email: matteo.destino@accenture.com
       name: Matteo Destino
   security:
-    securitySchemes:
+    securitySchemes: 
       bearerAuth:
         type: http
         scheme: bearer
         bearerFormat: JWT
   selector:
     matchLabels:
-      oda.tmforum.org/componentName: TMFC024 - Billing Account Management
-  type: Party Management 
+      oda.tmforum.org/componentName: Billing Account Management
+  type: Party Management
   version: 1.1.0
