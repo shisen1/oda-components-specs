@@ -274,19 +274,19 @@ spec:
             - resourceSpecificationCreateEvent
             - resourceSpecificationChangeEvent
             - resourceSpecificationDeleteEvent
- maintainers:
+  maintainers:
     - email: sylvie.demarest@orange.com
       name: sylvie demarest
     - email: gaetano.biancardi@accenturecom
       name: gaetano biancardi  
- management: []
+  management: []
   owners:
     - email: gaetano.biancardi@accenture.com
       name: Gaetano Biancardi
- security:
+  security:
     securitySchemes: []
- selector:
+  selector:
     matchLabels:
       oda.tmforum.org/componentName: Product Catalog Management
- type: Product Catalog Management
-  version: 0.0.2
+  type: Product Catalog Management
+  version: 1.1.0
