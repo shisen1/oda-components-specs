@@ -64,7 +64,7 @@ coreFunction:
       path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4
       developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4/docs
       port: 8080
-      rerouces: 
+      resouces: 
       - event:  
         - GET
         - GET /id
@@ -246,7 +246,7 @@ coreFunction:
         apitype: openapi
         port: 80
         -resources: 
-          ProcessFlowManagement:
+          ProcessFlow:
             - processFlowCreateEvent
             - processFlowStateChangeEvent
             - processFlowStateDeleteEvent
@@ -264,7 +264,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-ResourceInventoryManagement
       apitype: openapi
       resources: 
-      - ResourceInventoryManagement:
+      - ResourceInventory:
         - resourceDeleteEvent 
     - name: ServiceInventoryManagement
       specification: https://open-api.tmforum.org20-ServiceInventory-v4.0.0.swagger.json
@@ -273,7 +273,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-ServiceInventoryManagement
       apitype: openapi
       resources:   
-      - ServiceInventoryManagement:
+      - ServiceInventory:
         - serviceDeleteEvent
     - name: ProductCatalogManagement
       specification: https://open-api.tmforum.org20-ProductCatalog-v4.0.0.swagger.json
@@ -282,7 +282,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-ProductCatalogManagement
       apitype: openapi
       resources:   
-      - ProductCatalogManagement:
+      - ProductCatalog:
         - productSpecificationDeleteEvent
         - productOfferingDeleteEvent
         - productOfferingPriceDeleteEvent
@@ -293,7 +293,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-PartyRoleManagement
       apitype: openapi
       resources:   
-      - PartyRoleManagement:
+      - PartyRole:
         - partyRoleDeleteEvent
    - name: AgreementManagement
       specification: https://open-api.tmforum.org20-Agreement-v4.0.0.swagger.json
@@ -302,7 +302,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-AgreementManagement
       apitype: openapi
       resources:   
-      - AgreementManagement:
+      - Agreement:
         - agreementDeleteEvent
    - name: AccountManagement
       specification: https://open-api.tmforum.org20-Account-v4.0.0.swagger.json
@@ -311,7 +311,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-AccountManagement
       apitype: openapi
       resources:   
-      - AccountManagement:
+      - Account:
         - billingAccountDeleteEvent   
     - name: UserRolePermissionManagement
       specification: https://open-api.tmforum.org20-UserRolePermission-v4.0.0.swagger.json
@@ -320,7 +320,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-UserRolePermissionManagement
       apitype: openapi
       resources:   
-      - UserRolePermissionManagement:
+      - UserRolePermission:
         - permissionDeleteEvent
     - name: GeographicSiteManagement
       specification: https://open-api.tmforum.org20-GeographicSite-v4.0.0.swagger.json
@@ -329,7 +329,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-GeographicSiteManagement
       apitype: openapi
       resources:   
-      - GeographicSiteManagement:
+      - GeographicSite:
         - geographicSiteDeleteEvent
     - name: GeographicLocation
       specification: https://open-api.tmforum.org20-GeographicLocatin-v4.0.0.swagger.json
@@ -347,7 +347,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-PartyManagement
       apitype: openapi
       resources:   
-      - PartyManagement:
+      - Party:
         - individualDeleteEvent
         - organizationDeleteEvent
     - name: ProductOrderingManagement
@@ -357,7 +357,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-ProductOrderingManagement
       apitype: openapi
       resources:   
-      - ProductOrderingManagement:
+      - ProductOrdering:
         - productOrderDeleteEvent
     - name: ProductInventoryManagement
       specification: https://open-api.tmforum.org20-ProductInventory-v4.0.0.swagger.json
@@ -366,7 +366,7 @@ coreFunction:
       implementation: /{{.Release.Name}}-ProductInventoryManagement
       apitype: openapi
       resources:   
-      - ProductInventoryManagement:
+      - ProductInventory:
         - productCreateEvent
         - productDeleteEvent
         - productAttributeValueChangeEvent
