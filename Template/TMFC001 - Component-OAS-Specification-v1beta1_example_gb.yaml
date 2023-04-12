@@ -27,7 +27,7 @@ coreFunction:
       path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/productCatalogManagement/v4
       developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/productCatalogManagement/v4/docs
       port: 8080
-      rerouces:
+      resources:
         - catalog:
           - GET
           - GET /id
