@@ -27,7 +27,7 @@ coreFunction:
       path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/serviceInventory/v4
       developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/serviceInventory/v4/docs
       port: 8080
-      resouces:
+      resources:
         - service:
           - GET
           - GET /id
@@ -64,7 +64,7 @@ coreFunction:
       path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4
       developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4/docs
       port: 8080
-      rerouces: 
+      resources: 
       - event:  
         - GET
         - GET /id
