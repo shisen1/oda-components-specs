@@ -154,7 +154,7 @@ spec:
       name: Gaetano Biancardi
   management: []
   owners:
-    - email: kgaetano.biancardi@accenture.com
+    - email: gaetano.biancardi@accenture.com
       name: Gaetano Biancardi
   security:
     securitySchemes:
