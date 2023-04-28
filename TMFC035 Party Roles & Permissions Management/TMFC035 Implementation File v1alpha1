@@ -5,7 +5,7 @@ metadata:
   - name: Tag.Release.Name - PartyRoles&Permissions
   oda.tmforum.org/funtionalBlockName: Party Management
   oda.tmforum.org/componentName: PartyRoles&Permissions
- spec:
+spec:
   componentKinds:
   - group: core
     kind: Service
@@ -21,7 +21,7 @@ metadata:
           path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/UserRolesandPermissions/v4
           developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/UserRolesandPermissions/v4/docs
           port: 8080
-         - name: PartyRoleManagement
+        - name: PartyRoleManagement
           required: true
           implementation: /{{.Release.Name}}-PartyRoleManagement
           path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PartyRoleManagement/v4
