@@ -126,7 +126,7 @@ coreFunction:
               - monitor:
                 - GET
                 - GET /id
-       - name: ServiceActivationAndConfiguration
+       - name: ServiceQualification
          id: TMF645
          isRequired: not
          version: 4.0
@@ -339,7 +339,6 @@ coreFunction:
           - organization:
             - GET
             - GET /id
-       
        - name: PartyRoleManagement
          id: TMF669
          isRequired: not
@@ -427,47 +426,126 @@ coreFunction:
           - communication:
           - POST
           - GET /id
-          - GE  
+          - GET  
                                
     publishedEvents: 
-          - name: GeographicAddressManagement
-            id: TMF673
-            isRequired: yes
-            version: 4.0
-            specification: https://raw.githubusercontent.com/tmforum-apis/TMF673_GeographicAddress/master/TMF673-GeographicAddress-v4.0.1.swagger.json
-            implementation: /{{.Release.Name}}-GeographicAddressManagement
-            apitype: openapi
-            path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/GeographicAddressManagement/v4
-            developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/GeographicAddressManagement/v4/docs
-            port: 8080
-            resources:
-            - geographicAddressValidation:
-              - geographicAddressValidationStateChangeEvent
-          - name: ServiceActivation
-            specification: https://raw.githubusercontent.com/tmforum-apis/TMF674_GeographicSite/master/TMF674-GeographicSite-v4.0.0.swagger.json
-            hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ServiceActivation/hub
-            implementation: /{{.Release.Name}}-ServiceActivationEvent
-            port: 8080
-            resources:
-            - ServiceActivation:
-                  - geographicSiteAttributeValueChangeEvent
-                  - geographicSiteCreateEvent
-                  - geographicSiteDeleteEvent
-                  - geographicSiteStatusChangeEvent
-          - name: GeographicLocation
-            specification: https://raw.githubusercontent.com/tmforum-apis/TMF675_GeographicLocation/master/TMF675-GeographicLocation-v4.0.0.swagger.json
-            hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/GeographicLocation/hub
-            implementation: /{{.Release.Name}}-GeographicLocationEvent
-            apitype: openapi
-            port: 80
-            resources: 
-            - geographicLocation:
-                - geographicLocationAttributeValueChangeEvent
-                - geographicLocationCreateEvent
-                - geographicLocationDeleteEvent
-      
+    - name: ServiceOrderingManagement
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF641_ServiceOrdering/master/TMF641-ServiceOrdering-v4.1.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/serviceOrderingManagement/hub
+      implementation: /{{.Release.Name}}-serviceOrderingManagementEvent
+      developerUI: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/serviceOrderingManagement/v4/docs
+      apitype: openapi
+      port: 80
+      -resources:
+           ServiceOrdering:
+            - serviceOrderCreateEvent
+            - serviceOrderStateChangeEvent
+            - serviceOrderDeleteEvent
+            - serviceOrderAttributeValueChangeEvent
+            - serviceOrderInformationRequiredEvent
+            - serviceOrderMilestoneEvent
+            - serviceOrderJeopardyEvent
+            - cancelServiceOrderCreateEvent
+            - cancelServiceOrderStateChangeEvent
+            - cancelServiceOrderInformationRequiredEvent
+    - name: ProcessFlowManagement
+      specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
+      implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
+      apitype: openapi
+      port: 80
+      -resources: 
+        ProcessFlowManagement:
+        - processFlowCreateEvent
+        - processFlowStateChangeEvent
+        - processFlowStateDeleteEvent
+        - processFlowStateAttributeValueChangeEvent
+        - taskFlowCreateEvent
+        - taskFlowStateChangeEvent
+        - taskFlowDeleteEvent
+        - taskFlowAttributeValueChangeEvent
+        - taskFlowInformationRequiredEvent
     subscribedEvents: 
-   
+       - name: ResourceOrderManagement
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF652_ResourceOrderManagement/master/TMF652-ResourceOrder-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicespecification/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-ResourceOrderManagement
+         apitype: openapi
+         resources:
+          - ResourceOrderManagement:
+            - resourceOrderStateChange
+            - resourceOrderAttributeValueChangeEvent
+            - resourceOrderInformationRequiredEvent
+            - cancelResourceOrderStateChange
+            - cancelResourceOrderInformationRequiredEvent
+       - name: ServiceActivationAndConfiguration
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF640_ActivationConfiguration/master/TMF640-ServiceActivation-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ActivationConfiguration/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-ActivationConfiguration
+         apitype: openapi
+         resources:
+            - ServiceActivationConfiguration:
+                - serviceCreateEvent
+                - serviceStateChangeEvent
+                - monitorCreateEvent
+                - monitorStatechangeEvent
+       - name: ServiceQualification
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF645_ServiceQualification/master/TMF645-ServiceQualification-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ServiceQualification/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-ServiceQualification
+         apitype: openapi
+         resources:
+          - ServiceQualification:
+            - checkServiceQualificationStateChangeEvent
+            - queryServiceQualificationStateChangeEvent
+       - name: WorkOrder
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF697_Work_Order/main/TMF697-WorkOrder-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/WorkOrder/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-WorkOrder
+         apitype: openapi
+         resources:
+          - WorkOrder:
+            - workOrderStateChange
+       - name: Communication 
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF681_Communication/master/TMF681-Communication-v4.0.0.swagger.json     
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Communication/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-Communication
+         apitype: openapi     
+         resources: 
+          - communication:
+            - communicationMessageStateChangeEvent 
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       - name: ResourceActivationAndConfiguration
+         specification: https://open-api.tmforum.org/TMF633-Servicecatalog-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceActivationAndConfiguration/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-ResourceActivationAndConfiguration
+         apitype: openapi
+         resources:
+         - ResourceActivationAndConfiguration:
+           - resourceChangeEvent
+           - monitorCreateEvent
+           - monitorStatechangeEvent
+
+
+
 management: []
 reporting: []
 security: []
