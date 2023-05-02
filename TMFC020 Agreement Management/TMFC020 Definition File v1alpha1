@@ -23,8 +23,14 @@ spec:
             - GET/id
             - POST
             - PATCH/id
-            - DELETE/id 
-       - ProcessFlowManagement:
+            - DELETE/id
+ 	   - agreementSpecification:
+ 	        - GET
+            - GET/id
+            - POST
+            - PATCH/id
+            - DELETE/id  
+       - ProcessFlowManagement:
          version: 4.0
          id: TMF701
          processFlow:
@@ -54,7 +60,43 @@ spec:
       	 organization:
          	- GET
          	- GET/id
- 	   - ProcessFlowManagement:
+ 	   - UserRolesandPermissions:
+         version: 4.0
+         id : TMF672
+         permission:
+         	- GET
+         	- GET/id
+      	 partyRole:
+         	- GET
+         	- GET/id
+  	   - PartyRoleManagement:
+         version: 4.0
+         id : TMF669
+         partyRole:
+         	- GET
+         	- GET/id
+   	   - ProductCatalogManagement:
+         version: 4.0
+         id : TMF620
+         productOffering:
+         	- GET
+         	- GET/id
+         productOfferingPrice:
+         	- GET
+         	- GET/id
+       - ProductInventory:
+         version: 4.0
+         id : TMF637
+         product:
+         	- GET
+         	- GET/id  
+       - DocumentManagement:
+         version: 4.0
+         id : TMF667
+         document:
+         	- GET
+         	- GET/id   
+       - ProcessFlowManagement:
       	 version: 4.0
      	 id: TMF701
          processFlow:
