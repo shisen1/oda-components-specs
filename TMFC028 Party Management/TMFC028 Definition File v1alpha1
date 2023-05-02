@@ -83,26 +83,26 @@ spec:
         id: TMF669
         PartyRole:
         - GET
-        - GET /id    
+        - GET /id   
       GeographicAddressManagement:
         version: 4.0
         id: TMF673
         GeographicAddress:
         - GET
         - GET /id
-       GeographicSiteManagement:
+      GeographicSiteManagement:
         version: 4.0
         id: TMF674
         GeographicSite:
         - GET
         - GET /id
-       GeographicLocationManagement:
+      GeographicLocationManagement:
          version: 4.0
          id: TMF675
          GeographicSite:
          - GET
          - GET /id         
-        ProcessFlowManagement:
+      ProcessFlowManagement:
           version: 4.0
           id: TMF701
           processFlow:
@@ -130,7 +130,7 @@ spec:
        - IndividualAttributeValueChangeEvent
        - IndividualStateChangeEvent
        - IndividualDeleteEvent    
-        Organization:
+       Organization:
        - OrganizationCreateEvent
        - OrganizationAttributeValueChangeEvent
        - OrganizationStateChangeEvent

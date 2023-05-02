@@ -15,64 +15,64 @@ spec:
     kind: Deployment
   coreFunction:
     exposed APIs:
-        UserRolesandPermissions:
-        version: 4.0
-        id: TMF672
-            permission:
-                - GET
-                - GET/id
-                - POST
-                - PATCH/id
-                - DELETE/id
-            userRole:
-               - GET
-               - GET/id
-               - POST
-               - PATCH/id
-               - DELETE/id
-        PartyRoleManagement:
-        version: 4.0
-        id : TMF669
-            partyRole:
+       - UserRolesandPermissions:
+         version: 4.0
+         id: TMF672
+         permission:
+            - GET
+            - GET/id
+            - POST
+            - PATCH/id
+            - DELETE/id
+         userRole:
+           - GET
+           - GET/id
+           - POST
+           - PATCH/id
+           - DELETE/id
+       - PartyRoleManagement:
+         version: 4.0
+         id : TMF669
+         partyRole:
                 - GET
                 - GET/id
                 - POST
                 - PATCH/id
                 - DELETE/id 
-        Event:
-        version: 4.0
-        id: TMF688.
-            listener:
+       - Event:
+         version: 4.0
+         id: TMF688.
+         listener:
                 - POST
-            hub:
+         hub:
                 - POST
                 - DELETE/id
     dependentAPIs:
         - PartyManagement:
           version: 4.0
           id : TMF632
-            individual:
+          individual:
                 - GET
                 - GET/id
-            organization:
+          organization:
                 - GET
                 - GET/id
         - ProcessFlowManagement:
              version: 4.0
              id: TMF701
-               processFlow:
+             processFlow:
                 - POST
                 - GET
                 - GET/id
                 - DELETE/id
-              taskFlow:
+             taskFlow:
                 - GET
                 - GET/id
                 - PATCH/id 
         - Event:
           version: 4.0
           id : TMF688
-            event:
+          event:
                 - GET
                 - GET/id
     managementAPIs:
@@ -144,14 +144,14 @@ spec:
 maintainers:
   - email: matteo.destino@accenture.com
     name: Matteo Destino
-  management: []
-  owners:
+management: []
+owners:
    - email: matteo.destino@accenture.com
-    name: Matteo Destino
-  security:
+     name: Matteo Destino
+security:
     securitySchemes: []
-  selector:
+selector:
     matchLabels:
       oda.tmforum.org/componentName: Permissions
-  type: Party Management
-  version: 0.0.1
+type: Party Management
+version: 0.0.1
