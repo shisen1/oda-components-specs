@@ -45,7 +45,8 @@ spec:
         version: 4
         id: TMF648
         quote:
-          - POST
+          - GET
+          - GET /id
       ShoppingCartManagement:
         version: 4
         id: TMF663
