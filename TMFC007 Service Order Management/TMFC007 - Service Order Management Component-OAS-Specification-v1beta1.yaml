@@ -468,7 +468,7 @@ coreFunction:
     subscribedEvents: 
        - name: ResourceOrderManagement
          specification: https://raw.githubusercontent.com/tmforum-apis/TMF652_ResourceOrderManagement/master/TMF652-ResourceOrder-v4.0.0.swagger.json
-         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicespecification/call-back
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceOrderManagement/call-back
          port: 80
          implementation: /{{.Release.Name}}-ResourceOrderManagement
          apitype: openapi
@@ -519,17 +519,6 @@ coreFunction:
          resources: 
           - communication:
             - communicationMessageStateChangeEvent 
-
-
-
-
-
-
-
-
-
-
-
 
        
        - name: ResourceActivationAndConfiguration

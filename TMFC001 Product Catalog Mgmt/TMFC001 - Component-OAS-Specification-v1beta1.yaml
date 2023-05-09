@@ -295,40 +295,18 @@ coreFunction:
     subscribedEvents: 
     - name: ResourceActivationAndConfiguration
       specification: https://open-api.tmforum.org/TMF633-Servicecatalog-v4.0.0.swagger.json
-      call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicepecification/call-back
+      call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicespecification/call-back
       port: 80
       implementation: /{{.Release.Name}}-ResourceActivationAndConfiguration
       apitype: openapi
       resources: 
       - ResourceActivationAndConfiguration:
-        - resourceCreateEvent
-        - resourceAttributeValueChangeEvent
-        - resourceStateChangeEvent
-        - resourceDeleteEvent
+        - resourceChangeEvent
         - monitorCreateEvent
         - monitorStatechangeEvent
-        - monitorAttributeValueChange
-        - monitorDeleteEvent
-      - ResourceFunctionActivationAndConfiguration:
-        - MigrateCreateEvent
-        - MigrateAttributeValueChangeEvent
-        - MigrateStateChangeEvent
-        - MigratedeleteEvent
-        - HealCreateEvent
-        - HealAttributeValueChangeEvent
-        - HealStateChangeEvent
-        - HealDeleteEvent
-        - ScaleCreateEvent
-        - ScaleAttributeValueChangeEvent
-        - ScaleStateChangeEvent
-        - ScaleDeleteEvent
-        - ResourceFunctionCreateEvent
-        - ResourceFunctionAttributeValueChangeEvent
-        - ResourceFunctionStateChangeEvent
-        - ResourceFunctionDeleteEvent    
     - name: ServiceCatalogManagement
       specification: https://open-api.tmforum.org/TMF633-Servicecatalog-v4.0.0.swagger.json
-      call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicepecification/call-back
+      call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/servicespecification/call-back
       port: 80
       implementation: /{{.Release.Name}}-ServiceCatalogManagement
       apitype: openapi
