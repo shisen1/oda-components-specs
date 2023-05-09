@@ -501,26 +501,21 @@ coreFunction:
           - ServiceQualification:
             - checkServiceQualificationStateChangeEvent
             - queryServiceQualificationStateChangeEvent
-       - name: WorkOrder
-         specification: https://raw.githubusercontent.com/tmforum-apis/TMF697_Work_Order/main/TMF697-WorkOrder-v4.0.0.swagger.json
-         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/WorkOrder/call-back
+
+       - name: ResourceFunctionActivationConfiguration
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF664_ResourceFunctionActivationConfiguration/master/TMF664-ResourceFunctionActivation-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceFunctionActivationConfiguration/call-back
          port: 80
-         implementation: /{{.Release.Name}}-WorkOrder
+         implementation: /{{.Release.Name}}-ResourceFunctionActivationConfiguration
          apitype: openapi
          resources:
-          - WorkOrder:
-            - workOrderStateChange
-       - name: Communication 
-         specification: https://raw.githubusercontent.com/tmforum-apis/TMF681_Communication/master/TMF681-Communication-v4.0.0.swagger.json     
-         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Communication/call-back
-         port: 80
-         implementation: /{{.Release.Name}}-Communication
-         apitype: openapi     
-         resources: 
-          - communication:
-            - communicationMessageStateChangeEvent 
-
-       
+          - ResourceFunctionActivationConfiguration:
+            - resourceFunctionCreateEvent
+            - resourceFunctionChangeEvent
+            - monitorStatechangeEvent
+            - healStatechangeEvent
+            - scaleStatechangeEvent
+            - migrateStatechangeEvent
        - name: ResourceActivationAndConfiguration
          specification: https://open-api.tmforum.org/TMF633-Servicecatalog-v4.0.0.swagger.json
          call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceActivationAndConfiguration/call-back
@@ -532,9 +527,33 @@ coreFunction:
            - resourceChangeEvent
            - monitorCreateEvent
            - monitorStatechangeEvent
-
-
-
+       - name: ResourcePoolManagement
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF685_ResourcePool/master/Resource_Pool_Management.admin.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourcePoolManagement/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-/ResourcePoolManagement
+         apitype: openapi
+         resources:
+         - ResourcePoolManagement:
+           - reservationStateChangeNotification
+       - name: Communication 
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF681_Communication/master/TMF681-Communication-v4.0.0.swagger.json     
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Communication/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-Communication
+         apitype: openapi     
+         resources: 
+          - communication:
+            - communicationMessageStateChangeEvent 
+       - name: WorkOrder
+         specification: https://raw.githubusercontent.com/tmforum-apis/TMF697_Work_Order/main/TMF697-WorkOrder-v4.0.0.swagger.json
+         call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/WorkOrder/call-back
+         port: 80
+         implementation: /{{.Release.Name}}-WorkOrder
+         apitype: openapi
+         resources:
+          - WorkOrder:
+            - workOrderStateChange
 management: []
 reporting: []
 security: []
