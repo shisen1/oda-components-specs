@@ -93,7 +93,7 @@ coreFunction:
       id: TMF669
       isRequired: not
       version: 4.0
-      specification: https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      specification: https://github.com/tmforum-apis/TMF669_PartyRole/blob/master/TMF669-PartyRole-v4.0.0.swagger.json
       apitype: openapi
       resources:  
       - PartyRoleManagement:
@@ -156,7 +156,7 @@ coreFunction:
       id: TMF701
       isRequired: not
       version: 4.0
-      specification: ttps://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
       apitype: openapi
       resources: 
       - processFlow:
