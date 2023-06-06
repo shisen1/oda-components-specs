@@ -1,4 +1,3 @@
-@startyaml 
 ApiVersion: oda.tmforum.org/v1alpha1
 kind: component
 metadata:
@@ -116,7 +115,8 @@ spec:
         - processFlowCreateEvent
         - processFlowStateChangeEvent
         - taskFlowCreateEvent
-        - taskFlowStateChangeEvent      maintainers:
+        - taskFlowStateChangeEvent    
+  maintainers:
   - email: gaetano.biancardi@accenture.com
     name: Gaetano Biancardi
   management: []
@@ -132,4 +132,4 @@ spec:
       oda.tmforum.org/componentName: PartyInteraction Management
   type: TMFC-023-PartyInteraction Management
   version: 1.0.0  
-  @endyaml
+

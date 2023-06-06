@@ -294,12 +294,6 @@ coreFunction:
       implementation: /{{.Release.Name}}-PartyRoleManagement
       apitype: openapi
       resources:   
-      - Quote:
-        - QuoteCreateEvent
-        - QuoteStateChangeEvent
-        - QuoteDeleteEvent
-        - QuoteInformationRequiredEvent
-        - QuoteAttributeValueChangeEvent   
       - PartyRole:
         - PartyRoleCreateEvent
         - PartyRoleAttributeValueChangeEvent

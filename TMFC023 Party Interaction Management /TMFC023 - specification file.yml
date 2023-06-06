@@ -1,4 +1,4 @@
-@startyaml  apiVersion: oda.tmforum.org/v1alpha1
+apiVersion: oda.tmforum.org/v1alpha1
 kind: component
 metadata:
   labels:
@@ -147,4 +147,4 @@ spec:
       oda.tmforum.org/componentName: PartyInteraction Management
   type: PartyInteraction Management
   version: 1.0.0      
-  @endyaml
+
