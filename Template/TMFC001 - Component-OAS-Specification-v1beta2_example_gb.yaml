@@ -1,22 +1,16 @@
-apiVersion: oda.tmforum.org/v1beta1
+apiVersion: oda.tmforum.org/v1beta2
 kind: component
 metadata:
-  name: TMFC001-productcatalogmanagement
-  labels:
-    oda.tmforum.org/componentId:  (Remove)
-    oda.tmforum.org/IscomponentName: ProductCatalogManagement (Modified, it's the supplier component name)
-    oda.tmforum.org/funtionalBlockName: CoreCommerce
-    oda.tmforum.org/componentVersion: 1.1.0 (New)
+  name: components.oda.tmforum.org
 spec:
-  componentId: TMFC001 (New) [New]
-  componentName: ProductCatalogManagement (Modified) [New]
-  componentFunctionalBlock: CoreCommerce [New]
-  componenentDescription: "Component description from Component Specification documentation" 
+  componentId: TMFC001
+  componentName: ProductCatalogManagement
+  componentFunctionalBlock: CoreCommerce 
+  componenentDescription: The Product Catalog Management ODA Component is responsible for organizing the collection of Products and Product Offerings specifications that identify and define all requirements of a product or a product offering that can be commercialized.
   componentVersion: 1.1.0 [New]
-  type: TMFC001-productcatalogmanagement  [Remove]
-  componentStatus: specified (enumeration of "future", "planned", specified")
-  publicationDate: 04/07/2023
-    maintainers:
+  componentStatus: specified 
+  componentPublicationDate: 2023-08-18
+  maintainers:
   - name: Gaetano Biancardi
     email: gaetano.biancardi@accenture.com
   owners:
