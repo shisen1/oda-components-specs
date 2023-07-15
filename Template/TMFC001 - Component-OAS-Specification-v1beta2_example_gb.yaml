@@ -71,7 +71,7 @@ coreFunction:
           - DELETE
     - name: ProcessFlowManagement
       id: TMF701
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: ttps://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-ProcessFlowManagement
@@ -108,7 +108,7 @@ coreFunction:
         - DELETE
     - name: Event
       id: TMF688
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF671_Promotion/master/TMF671-Promotion-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-PromotionManagement
@@ -126,7 +126,7 @@ coreFunction:
     dependantAPIs:
     - name: ServiceCatalogManagement 
       id: TMF633
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF620_ProductCatalog/master/TMF620-ProductCatalog-v4.0.0.swagger.json
       apitype: openapi     
@@ -136,7 +136,7 @@ coreFunction:
         - GET /id  
     - name: PartyRoleManagement
       id: TMF669
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
       apitype: openapi
@@ -146,7 +146,7 @@ coreFunction:
         - GET /id
     - name: ResourceCatalog
       id: TMF672
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF688-ResourceCatalog/master/TMF688-ResourceCatalog-v4.0.0.swagger.json
       apitype: openapi
@@ -156,7 +156,7 @@ coreFunction:
         - GET /id
     - name: AgreementManagement
       id: TMF651
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://github.com/tmforum-apis/TMF651_AgreementManagement/blob/master/TMF651-Agreement-v4.0.0.swagger.json
       apitype: openapi
@@ -196,7 +196,7 @@ coreFunction:
         - GET /id    
     - name: UserRolePermission 
       id: TMF672
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://github.com/tmforum-apis/TMF672_UserRolesPermissions/blob/master/TMF672-UserRolePermission-v4.0.0.swagger.json     
       apitype: openapi     
@@ -206,7 +206,7 @@ coreFunction:
         - GET /id    
     - name: EntityCatalogManagement 
       id: TMF662
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://github.com/tmforum-apis/TMF662_EntityCatalog/blob/master/TMF662-EntityCatalog-v4.0.0.swagger.json     
       apitype: openapi     
@@ -219,7 +219,7 @@ coreFunction:
         - GET /id      
     - name: ProductCatalogManagement 
       id: TMF620
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://github.com/tmforum-apis/TMF620_ProductCatalog/blob/master/TMF620-ProductCatalog-v4.0.0.swagger.json     
       apitype: openapi     
@@ -231,7 +231,7 @@ coreFunction:
       - DELETE    
     - name: Event 
       id: TMF688
-      isRequired: not
+      isRequired: no
       version: 4.0
       specification: https://github.com/tmforum-apis/TMF688-Event/blob/master/TMF688-Event-v4.0.0.swagger.json      
       apitype: openapi     
