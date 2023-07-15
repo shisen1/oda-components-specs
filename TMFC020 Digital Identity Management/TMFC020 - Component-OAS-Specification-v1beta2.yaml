@@ -22,14 +22,11 @@ coreFunction:
       id: TMF720
       isRequired: 'yes'
       version: 4
-      specification: >-
-        https://raw.githubusercontent.com/tmforum-apis/TMF720_DigitalIdentityManagement/master/TMF720-DigitalIdentityManagement-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF720_DigitalIdentityManagement/master/TMF720-DigitalIdentityManagement-v4.0.0.swagger.json
       implementation: '/{{.Release.Name}}-digidemngt'
       apitype: openapi
-      path: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/DigitalIdentityManagement/v4
-      developerUI: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/DigitalIdentityManagement/v4/docs
+      path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/DigitalIdentityManagement/v4
+      developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/DigitalIdentityManagement/v4/docs
       port: 8080
       resources:
         - digitalIdentity:
@@ -48,14 +45,11 @@ coreFunction:
       id: TMF701
       isRequired: 'no'
       version: 4
-      specification: >-
-        https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlowManagement/master/TMF701-ProcessFlowManagement-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlowManagement/master/TMF701-ProcessFlowManagement-v4.0.0.swagger.json
       implementation: '/{{.Release.Name}}-procmngttapi'
       apitype: openapi
-      path: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4
-      developerUI: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4/docs
+      path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4
+      developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4/docs
       port: 8080
       resources:
         - processFlow:
@@ -71,14 +65,11 @@ coreFunction:
       id: TMF688
       isRequired: no
       version: 4
-      specification: >-
-        https://raw.githubusercontent.com/tmforum-apis/TMF671_Promotion/master/TMF671-Promotion-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF671_Promotion/master/TMF671-Promotion-v4.0.0.swagger.json
       implementation: '/{{.Release.Name}}-PromotionManagement'
       apitype: openapi
-      path: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PromotionManagement/v4
-      developerUI: >-
-        /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PromotionManagement/v4/docs
+      path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PromotionManagement/v4
+      developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PromotionManagement/v4/docs
       port: 8080
       resources:
         - event:
@@ -92,8 +83,7 @@ coreFunction:
       id: TMF632
       isRequired: 'yes'
       version: 4
-      specification: >-
-        https://raw.githubusercontent.com/tmforum-apis/TMF632_PartyManagement/master/TMF632-PartyManagement-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF632_PartyManagement/master/TMF632-PartyManagement-v4.0.0.swagger.json
       apitype: openapi
       resources:
         - individual:
@@ -106,8 +96,7 @@ coreFunction:
       id: TMF669
       isRequired: 'yes'
       version: 4
-      specification: >-
-        https://github.com/tmforum-apis/TMF669-PartyRoleManagement/blob/master/TMF669-PartyRoleManagement-v4.0.0.swagger.json
+      specification: https://github.com/tmforum-apis/TMF669-PartyRoleManagement/blob/master/TMF669-PartyRoleManagement-v4.0.0.swagger.json
       apitype: openapi
       resources:
         - partyRole:
@@ -116,8 +105,7 @@ coreFunction:
       id: TMF701
       isRequired: 'no'
       version: 4
-      specification: >-
-        ttps://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
       apitype: openapi
       resources:
         - processFlow:
@@ -133,8 +121,7 @@ coreFunction:
       id: TMF688
       isRequired: 'no'
       version: 4
-      specification: >-
-        https://github.com/tmforum-apis/TMF688-Event/blob/master/TMF688-Event-v4.0.0.swagger.json
+      specification: https://github.com/tmforum-apis/TMF688-Event/blob/master/TMF688-Event-v4.0.0.swagger.json
       apitype: openapi
       resources:
         - event:
@@ -142,8 +129,7 @@ coreFunction:
             - GET /id
   publishedEvents:
     - name: digitalIdentity
-      specification: >-
-        https://raw.githubusercontent.com/tmforum-apis/TMF720_DigitalIdentityManagement/master/TMF720-DigitalIdentityManagement-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF720_DigitalIdentityManagement/master/TMF720-DigitalIdentityManagement-v4.0.0.swagger.json
       implementation: '/{{.Release.Name}}-digidemngt'
       apitype: openapi
       port: 80
@@ -155,8 +141,7 @@ coreFunction:
           - DigitalIdentityAttributeValueChangeEvent
   subscribedEvents:
     - name: PartyRoleManagement
-      specification: >-
-        https://github.com/tmforum-apis/TMF669-PartyRoleManagement/blob/master/TMF669-PartyRoleManagement-v4.0.0.swagger.json
+      specification: https://github.com/tmforum-apis/TMF669-PartyRoleManagement/blob/master/TMF669-PartyRoleManagement-v4.0.0.swagger.json
       apitype: openapi
       port: 80
       resources:
