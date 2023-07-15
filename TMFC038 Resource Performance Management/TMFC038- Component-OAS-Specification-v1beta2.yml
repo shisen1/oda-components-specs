@@ -97,7 +97,14 @@ coreFunction:
         developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EventManagement/v4/docs
         port: 8080
     PublishedEvent:
-       ProcessFlowManagement:
+    - name: ProcessFlowManagement
+      specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
+      implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
+      apitype: openapi
+      port: 80
+      -resources: 
+        ProcessFlowManagement:
         - processFlowCreateEvent
         - processFlowStateChangeEvent
         - processFlowStateDeleteEvent
@@ -106,13 +113,25 @@ coreFunction:
         - taskFlowStateChangeEvent
         - taskFlowDeleteEvent
         - taskFlowAttributeValueChangeEvent
-        - taskFlowInformationRequiredEvent 
-       AlarmManagement:
+        - taskFlowInformationRequiredEvent
+    - name: AlarmManagement
+      specification: https://github.com/tmforum-apis/TMF642_AlarmManagement/blob/master/TMF642-Alarm-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Alarm/hub
+      implementation: /{{.Release.Name}}-Alarm
+      apitype: openapi
+      port: 80
+      -resources:     
         - alarmStateChange**
         - alarmCreateEvent**
         - alarmClearEvent**
         - alarmAckEvent**
-       PerformanceManagement:
+    - name: PerformanceManagement
+      specification: https://github.com/tmforum-apis/TMF628_Performance/blob/main/TMF628-Performance-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Performance/hub
+      implementation: /{{.Release.Name}}-Performance
+      apitype: openapi
+      port: 80
+      -resources:       
         - measurementCollectionJobCreateEvent
         - measurementCollectionJobExecutionStateChangeEvent
         - measurementCollectionJobDeleteEvent
@@ -124,29 +143,43 @@ coreFunction:
         - onDemandCollectionDeleteEvent
         - onDemandCollectionAttributeValueChangeEvent
         - onDemandCollectionFilesReadyEvent
-        - onDemandCollectionFilesPreparationErrorEvent
-       PerformanceThresholdManagement:
-        - thresholdCreateNotification
-        - thresholdChangeNotification
-        - thresholdRuleCreateNotification
-        - thresholdRuleChangedNotification
-        - thresholdJobCreateNotification
-        - thresholdJobChangedNotification
-        - thresholdJobSuspendNotification
-        - thresholdJobResumeNotification         
+        - onDemandCollectionFilesPreparationErrorEvent     
     SubscribedEvent:
-        ResourceCatalogManagement:
+    - name: ResourceCatalogManagement
+      specification: https://github.com/tmforum-apis/TMF634_ResourceCatalog/blob/master/TMF634-ResourceCatalog-v4.1.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceCatalog/hub
+      implementation: /{{.Release.Name}}-ResourceCatalog
+      apitype: openapi
+      port: 80
+      -resources:     
           - ResourceSpecificationChangeEvent
-        ResourceInventoryManagement:
+    - name: ResourceInventoryManagement
+      specification: https://github.com/tmforum-apis/TMF639_ResourceInventory/blob/master/TMF639-ResourceInventory-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceInventory/hub
+      implementation: /{{.Release.Name}}-ResourceInventory
+      apitype: openapi
+      port: 80    
+      -resources:             
           - ResourceCreateEvent
           - ResourceAttributeValueChangeEvent
           - ResourceStateChangeEvent
           - ResourceDeleteEvent
+    - name: ProcessFlowManagement
+      specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
+      implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
+      apitype: openapi
+      port: 80
+      -resources: 
         ProcessFlowManagement:
-          - processFlowCreateEvent
-          - processFlowStateChangeEvent
-          - taskFlowCreateEvent
-          - taskFlowStateChangeEvent         
+        - processFlowCreateEvent
+        - processFlowStateChangeEvent
+        - processFlowStateDeleteEvent
+        - processFlowStateAttributeValueChangeEvent
+        - taskFlowCreateEvent
+        - taskFlowStateChangeEvent
+        - taskFlowDeleteEvent
+        - taskFlowAttributeValueChangeEvent
 management: []
 reporting: []
 security: []
