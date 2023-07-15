@@ -66,7 +66,7 @@ coreFunction:
     - name: ProcessFlowManagement
       id: TMF701
       isRequired: no
-      version: 4
+      version: 4.0
       specification: ttps://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-ProcessFlowManagement
       apitype: openapi
@@ -86,7 +86,7 @@ coreFunction:
     - name: Event
       id: TMF688
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF688-Event/master/TMF688-Event-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-Event
       apitype: openapi
@@ -144,7 +144,7 @@ coreFunction:
     - name: PartyRoleManagement
       id: TMF669
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF669_PartyRole/master/TMF669-PartyRole-v4.0.swagger.json
       implementation: /{{.Release.Name}}-PartyRole
       apitype: openapi
@@ -156,7 +156,7 @@ coreFunction:
     - name: Party
       id: TMF632
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF632_Party/master/TMF632-Party-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-Party
       apitype: openapi
@@ -173,7 +173,7 @@ coreFunction:
     - name: EntityCatalogManagement
       id: TMF632
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF662_EntityCatalog/master/TMF662-EntityCatalog-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-EntityCatalog
       apitype: openapi
@@ -190,7 +190,7 @@ coreFunction:
     - name: Event
       id: TMF688
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF688-Event/master/TMF688-Event-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-Event
       apitype: openapi
@@ -213,7 +213,7 @@ coreFunction:
       developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceCatalog/v4/docs
       port: 8080
       resources:
-        - ResourceCatalogManagement: null
+       ResourceCatalogManagement: 
         - resourceCatalogCreateEvent
         - resourceCatalogChangeEvent
         - resourceCatalogDeleteEvent
@@ -250,7 +250,7 @@ coreFunction:
     - name: EntityCatalogManagement
       id: TMF632
       isRequired: no
-      version: 4
+      version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF662_EntityCatalog/master/TMF662-EntityCatalog-v4.0.0.swagger.json
       implementation: /{{.Release.Name}}-EntityCatalog
       apitype: openapi
