@@ -14,44 +14,44 @@ spec:
   - group: apps
     kind: Deployment
   coreFunction:
-    exposed APIs:
+    exposedAPIs:
        - AgreementManagement:
          version: 4.0
          id: TMF651
-	     agreement:
+         agreement: 
             - GET
             - GET/id
             - POST
             - PATCH/id
             - DELETE/id
- 	   - agreementSpecification:
- 	        - GET
+         agreementSpecification:
+            - GET
             - GET/id
             - POST
             - PATCH/id
-            - DELETE/id  
-       - ProcessFlowManagement:
-         version: 4.0
-         id: TMF701
-         processFlow:
+            - DELETE/id
+      - ProcessFlowManagement:
+        version: 4.0
+        id: TMF701
+        processFlow:
             - POST
             - GET
             - GET /id
             - DELETE
-      	 taskFlow:
-        	- PATCH
+        taskflow:
+            - PATCH
             - GET
-            - GET /id 
-       - Event:
-         version: 4.0
-      	 id: TMF688.
-      	 listener:
+            - GET/id
+      - Event:
+        version: 4.0
+      	id: TMF688.
+      	listener:
             - POST
-      	 hub:
+      	hub:
             - POST
-            	- DELETE/id 
-	dependentAPIs:
-	   - PartyManagement:
+           	- DELETE/id 
+	  dependentAPIs:
+	     - PartyManagement:
          version: 4.0
          id : TMF632
          individual:

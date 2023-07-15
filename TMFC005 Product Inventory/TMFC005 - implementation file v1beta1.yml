@@ -239,23 +239,23 @@ coreFunction:
              - productStateChangeEvent
              - productDeleteEvent
              - productBatchEvent 
-      - name: ProcessFlowManagement
-        specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
-        hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
-        implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
-        apitype: openapi
-        port: 80
-        -resources: 
-          ProcessFlow:
-            - processFlowCreateEvent
-            - processFlowStateChangeEvent
-            - processFlowStateDeleteEvent
-            - processFlowStateAttributeValueChangeEvent
-            - taskFlowCreateEvent
-            - taskFlowStateChangeEvent
-            - taskFlowDeleteEvent
-            - taskFlowAttributeValueChangeEvent
-            - taskFlowInformationRequiredEvent
+    - name: ProcessFlowManagement
+      specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
+      implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
+      apitype: openapi
+      port: 80
+      -resources: 
+        ProcessFlow:
+          - processFlowCreateEvent
+          - processFlowStateChangeEvent
+          - processFlowStateDeleteEvent
+          - processFlowStateAttributeValueChangeEvent
+          - taskFlowCreateEvent
+          - taskFlowStateChangeEvent
+          - taskFlowDeleteEvent
+          - taskFlowAttributeValueChangeEvent
+          - taskFlowInformationRequiredEvent
     subscribedEvents: 
     - name: ResourceInventoryManagement
       specification: https://open-api.tmforum.org20-ResourceInventory-v4.0.0.swagger.json
@@ -286,7 +286,7 @@ coreFunction:
         - productSpecificationDeleteEvent
         - productOfferingDeleteEvent
         - productOfferingPriceDeleteEvent
-   - name: PartyRoleManagement
+    - name: PartyRoleManagement
       specification: https://open-api.tmforum.org20-PartyRole-v4.0.0.swagger.json
       call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PartyRole/call-back
       port: 80
@@ -295,7 +295,7 @@ coreFunction:
       resources:   
       - PartyRole:
         - partyRoleDeleteEvent
-   - name: AgreementManagement
+    - name: AgreementManagement
       specification: https://open-api.tmforum.org20-Agreement-v4.0.0.swagger.json
       call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Agreement/call-back
       port: 80
@@ -304,7 +304,7 @@ coreFunction:
       resources:   
       - Agreement:
         - agreementDeleteEvent
-   - name: AccountManagement
+    - name: AccountManagement
       specification: https://open-api.tmforum.org20-Account-v4.0.0.swagger.json
       call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/Account/call-back
       port: 80

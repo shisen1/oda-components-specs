@@ -199,23 +199,23 @@ coreFunction:
             - serviceAttributeValueChangeEvent
             - serviceStateChangeEvent
             - serviceDeleteEvent
-      - name: ProcessFlowManagement
-        specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
-        hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
-        implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
-        apitype: openapi
-        port: 80
-        -resources: 
-          ProcessFlowManagement:
-            - processFlowCreateEvent
-            - processFlowStateChangeEvent
-            - processFlowStateDeleteEvent
-            - processFlowStateAttributeValueChangeEvent
-            - taskFlowCreateEvent
-            - taskFlowStateChangeEvent
-            - taskFlowDeleteEvent
-            - taskFlowAttributeValueChangeEvent
-            - taskFlowInformationRequiredEvent
+    - name: ProcessFlowManagement
+      specification: https://github.com/tmforum-apis/TMF701_ProcessFlow/blob/master/TMF701-ProcessFlow-v4.0.0.swagger.json
+      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/hub
+      implementation: /{{.Release.Name}}-ProcessFlowManagementEvent
+      apitype: openapi
+      port: 80
+      -resources: 
+        ProcessFlowManagement:
+          - processFlowCreateEvent
+          - processFlowStateChangeEvent
+          - processFlowStateDeleteEvent
+          - processFlowStateAttributeValueChangeEvent
+          - taskFlowCreateEvent
+          - taskFlowStateChangeEvent
+          - taskFlowDeleteEvent
+          - taskFlowAttributeValueChangeEvent
+          - taskFlowInformationRequiredEvent
     subscribedEvents: 
     - name: ResourceInventoryManagement
       specification: https://open-api.tmforum.org20-ResourceInventory-v4.0.0.swagger.json
@@ -247,7 +247,7 @@ coreFunction:
       resources:   
       - ServiceCatalog:
         - serviceSpecificationDeleteEvent
-   - name: PartyRoleManagement
+    - name: PartyRoleManagement
       specification: https://open-api.tmforum.org20-PartyRole-v4.0.0.swagger.json
       call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/PartyRole/call-back
       port: 80
