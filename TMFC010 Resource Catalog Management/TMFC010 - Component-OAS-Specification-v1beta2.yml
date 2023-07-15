@@ -203,15 +203,10 @@ coreFunction:
             - DELETE
   publishedEvents:
     - name: ResourceCatalogManagement
-      id: TMF634
-      isRequired: yes
-      version: 4.1
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF634_resourceCatalog/master/TMF634_resourceCatalog-v4.1.0.swagger.json
-      implementation: /{{.Release.Name}}-ResourceCatalog
-      apitype: openapi
-      path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceCatalog/v4.1.0
-      developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ResourceCatalog/v4/docs
-      port: 8080
+      hub: /{{.Release.Name}}-ResourceCatalog/hub
+      implementation: /{{.Release.Name}}-ResourceCatalogEvent
+      port: 80
       resources:
        ResourceCatalogManagement: 
         - resourceCatalogCreateEvent
@@ -249,14 +244,10 @@ coreFunction:
   subscribedEvents:
     - name: EntityCatalogManagement
       id: TMF632
-      isRequired: no
       version: 4.0
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF662_EntityCatalog/master/TMF662-EntityCatalog-v4.0.0.swagger.json
-      implementation: /{{.Release.Name}}-EntityCatalog
-      apitype: openapi
-      path: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EntityCatalog/v4
-      developerUI: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/EntityCatalog/v4/docs
-      port: 8080
+      call-back: /{{.Release.Name}}-EntityCatalog/call-back
+      port: 80
       resources:
         - EntityCatalogManagement:
             - entitySpecificationCreateEvent

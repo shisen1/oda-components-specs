@@ -216,7 +216,7 @@ coreFunction:
     subscribedEvents: 
     - name: ProductOrder
       specification: https://github.com/tmforum-apis/TMF622_ProductOrder/blob/master/TMF622-ProductOrder-v4.0.0.swagger.json
-      hub: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProductOrder/hub
+      call-back: /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProductOrder/call-back
       implementation: /{{.Release.Name}}-ProductOrderEvent
       apitype: openapi
       port: 80
@@ -233,7 +233,7 @@ coreFunction:
           - cancelProductOrderInformationRequired 
     - name: ServiceOrder
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF641_ServiceOrdering/master/TMF641-ServiceOrdering-v4.1.0.swagger.json
-      hub: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/serviceOrderingManagement/hub
+      call-back: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/serviceOrderingManagement/call-back
       implementation: /{{.Release.Name}}-serviceOrderingManagementEvent
       developerUI: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/serviceOrderingManagement/v4/docs
       apitype: openapi
@@ -252,7 +252,7 @@ coreFunction:
             - cancelServiceOrderInformationRequiredEvent
     - name: ResourceOrder
       specification: https://github.com/tmforum-apis/TMF652_ResourceOrderManagement/blob/master/TMF652-ResourceOrder-v4.0.0.swagger.json
-      hub: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/ResourceOrder/hub
+      call-back: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/ResourceOrder/call-back
       implementation: /{{.Release.Name}}-ResourceOrder
       developerUI: /{{.Release.Name}}-{{.Values.oda.component.type}}/tmf-api/ResourceOrder/v4/docs
       apitype: openapi
